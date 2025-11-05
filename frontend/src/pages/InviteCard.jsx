@@ -23,7 +23,7 @@ const InviteCard = () => {
     // Navigate after animation completes
     setTimeout(() => {
       navigate('/detalhes');
-    }, 1200);
+    }, 1600);
   };
 
   const handleKeyDown = (e) => {
@@ -35,19 +35,28 @@ const InviteCard = () => {
 
   return (
     <div className="invite-container">
-      <div className="invite-card">
-        <p className="invite-subtitle">Você está convidado(a)</p>
+      <div className={`envelope-wrapper ${isOpening ? 'opening' : ''}`}>
+        {/* Envelope Back */}
+        <div className="envelope-back"></div>
         
+        {/* Envelope Flap (Top Triangle) */}
+        <div className="envelope-flap-top"></div>
+        
+        {/* Envelope Front Flaps */}
+        <div className="envelope-flap-left"></div>
+        <div className="envelope-flap-right"></div>
+        
+        {/* Seal/Logo Container */}
         <div className="seal-container">
           {showTooltip && !isOpening && (
             <div className="floating-tooltip" role="status" aria-live="polite">
-              Clique no selo para abrir o convite
+              Clique no selo para abrir
               <div className="tooltip-arrow"></div>
             </div>
           )}
           
           <div
-            className={`seal ${isOpening ? 'opening' : ''}`}
+            className={`wax-seal ${isOpening ? 'breaking' : ''}`}
             onClick={handleSealClick}
             onKeyDown={handleKeyDown}
             role="button"
@@ -62,21 +71,17 @@ const InviteCard = () => {
           </div>
         </div>
 
-        <div className="invite-info">
-          <h2 className="invite-title">Formatura 2025</h2>
-          <p className="invite-course">Técnico em Informática</p>
-          <p className="invite-date">16 de Dezembro de 2025</p>
-        </div>
-      </div>
-
-      {isOpening && (
-        <div className="envelope-animation">
-          <div className="envelope-base">
-            <div className="envelope-flap"></div>
-            <div className="envelope-paper"></div>
+        {/* Card Inside Envelope */}
+        <div className="inner-card">
+          <div className="card-content">
+            <p className="card-subtitle">Você está convidado(a)</p>
+            <h2 className="card-title">Formatura 2025</h2>
+            <p className="card-course">Técnico em Informática</p>
+            <div className="card-divider"></div>
+            <p className="card-date">16 de Dezembro de 2025</p>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
