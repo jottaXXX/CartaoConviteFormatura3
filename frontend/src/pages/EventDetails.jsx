@@ -89,54 +89,6 @@ const EventDetails = () => {
             ></iframe>
           </div>
         </section>
-
-        <section className="rsvp-section fade-in-delayed-3">
-          <div className="rsvp-card">
-            <div className="rsvp-header">
-              <Users className="rsvp-icon" />
-              <h2 className="rsvp-title">Confirme sua Presença</h2>
-            </div>
-            <form onSubmit={handleSubmit} className="rsvp-form">
-              <div className="form-group">
-                <Label htmlFor="name">Nome Completo</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Digite seu nome"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <Label>Você irá comparecer?</Label>
-                <RadioGroup 
-                  value={formData.attendance} 
-                  onValueChange={(value) => setFormData({ ...formData, attendance: value })}
-                >
-                  <div className="radio-item">
-                    <RadioGroupItem value="yes" id="yes" />
-                    <Label htmlFor="yes" className="radio-label">Sim, estarei presente</Label>
-                  </div>
-                  <div className="radio-item">
-                    <RadioGroupItem value="no" id="no" />
-                    <Label htmlFor="no" className="radio-label">Não poderei comparecer</Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="submit-button"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Enviando...' : 'Confirmar Presença'}
-              </Button>
-            </form>
-          </div>
-        </section>
       </main>
 
       <footer className="details-footer">
