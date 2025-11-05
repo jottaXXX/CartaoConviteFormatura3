@@ -1,44 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { MapPin, Calendar, Clock, Users } from 'lucide-react';
+import React from 'react';
+import { MapPin, Calendar, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group';
-import { useToast } from '../hooks/use-toast';
 import './EventDetails.css';
 
 const EventDetails = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    attendance: 'yes'
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!formData.name.trim()) {
-      toast({
-        title: "Nome obrigatório",
-        description: "Por favor, informe seu nome.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Simulated API call - will be replaced with real backend later
-    setTimeout(() => {
-      toast({
-        title: "Confirmação recebida!",
-        description: "Obrigado por confirmar sua presença."
-      });
-      setFormData({ name: '', attendance: 'yes' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
 
   return (
     <div className="details-container">
