@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convite de Formatura - Turma 2025 - Técnico em Informática">
+    <title>Convite de Formatura - Turma 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="invite-container">
+        <div class="envelope-wrapper" id="envelope">
+            <!-- Envelope Back -->
+            <div class="envelope-back"></div>
+            
+            <!-- Envelope Flap (Top Triangle) -->
+            <div class="envelope-flap-top"></div>
+            
+            <!-- Envelope Front Flaps -->
+            <div class="envelope-flap-left"></div>
+            <div class="envelope-flap-right"></div>
+            
+            <!-- Seal/Logo Container -->
+            <div class="seal-container">
+                <div class="floating-tooltip" id="tooltip">
+                    Clique no selo para abrir
+                    <div class="tooltip-arrow"></div>
+                </div>
+                
+                <div class="wax-seal" id="seal" tabindex="0" role="button" aria-label="Clique para abrir o convite de formatura">
+                    <img 
+                        src="https://customer-assets.emergentagent.com/job_tech-formatura/artifacts/y90czdyx_image-Photoroom.png" 
+                        alt="Colégio Técnico de Bom Jesus"
+                        class="seal-logo"
+                    />
+                </div>
+            </div>
+
+            <!-- Card Inside Envelope -->
+            <div class="inner-card">
+                <div class="card-content">
+                    <p class="card-subtitle">Você está convidado(a)</p>
+                    <h2 class="card-title">Formatura 2025</h2>
+                    <p class="card-course">Técnico em Informática</p>
+                    <div class="card-divider"></div>
+                    <p class="card-date">16 de Dezembro de 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
